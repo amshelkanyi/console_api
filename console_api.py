@@ -13,13 +13,20 @@ import urllib3
 connection = urllib3.PoolManager()
 
 #define a function that takes an authours name
-def find_book_by_author(author):
+def find_book_by_author():
 
 #empty list where books will be stored
     list_books = []
 
 #key is required by the api
     api_key = "zP9LAJl2GjZfNRjS7bKyg"
+
+
+    print('*****Appliction that helps you to search for books by authors name*******')
+    print('           ***Enter any authors name you may know below****')
+
+#create an input where user can type authors name
+    author = input("Enter name of any author to search: ")
 
 #replace the spaces between names with %20
     author_name = author.replace(' ', '%20')
@@ -41,5 +48,7 @@ def find_book_by_author(author):
 #append to empty list
         list_books.append(book_title)
     return list_books
+
+print(find_book_by_author())
 
 
